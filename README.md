@@ -10,7 +10,6 @@
 6. **Like Post and Comments**
 7. **Delete Post**
 8. **Friend Request (send request, accept, or deny)**
-   ... and others.
 
 ## Getting Started
 
