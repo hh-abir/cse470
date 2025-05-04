@@ -122,7 +122,7 @@ const ProfileCard = ({ user }) => {
                 <span>Facebook</span>
               </div>
             </a>
-            <a href={user?.linkedin} target="_blank" rel="noopener noreferrer">
+            <a href={user?.linkedIn} target="_blank" rel="noopener noreferrer">
               <div className="flex gap-2 items-center text-ascent-2 cursor-pointer hover:opacity-80">
                 <FaLinkedin className="text-xl text-ascent-1" />
                 <span>LinkedIn</span>
