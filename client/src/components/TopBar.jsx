@@ -9,6 +9,7 @@ import { SetTheme } from "../redux/theme";
 import { Logout } from "../redux/userSlice";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
 
 const TopBar = () => {
   const navigate = useNavigate();
@@ -16,7 +17,8 @@ const TopBar = () => {
   const { theme } = useSelector((state) => state.theme);
   const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
-
+  const [showNotifications, setShowNotifications] = useState(false);
+  const notificationRef = useRef();
   const {
     register,
     handleSubmit,
@@ -35,7 +37,20 @@ const TopBar = () => {
     }
     navigate(`/search?q=${encodeURIComponent(data.search)}`);
   };
-
+useEffect(() => {
+  const handleClickOutside = (e) => {
+    if (
+      notificationRef.current &&
+      !notificationRef.current.contains(e.target)
+    ) {
+      setShowNotifications(false);
+    }
+  };
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, []);
 
   return (
     <div className="topbar w-full flex items-center justify-between py-3 md:py-6 px-4 bg-primary">

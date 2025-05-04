@@ -206,7 +206,16 @@ export const getUser = async (req, res, next) => {
 
 export const updateUser = async (req, res, next) => {
   try {
-    const { firstName, lastName, location, profileUrl, profession } = req.body;
+    const {
+      firstName,
+      lastName,
+      location,
+      profileUrl,
+      profession,
+      instagram,
+      facebook,
+      linkedIn,
+    } = req.body;
 
     if (!(firstName || lastName || contact || profession || location)) {
       next("Please provide all required fields");
@@ -222,6 +231,9 @@ export const updateUser = async (req, res, next) => {
       profileUrl,
       profession,
       _id: userId,
+      instagram,
+      facebook,
+      linkedIn,
     };
     const user = await Users.findByIdAndUpdate(userId, updateUser, {
       new: true,

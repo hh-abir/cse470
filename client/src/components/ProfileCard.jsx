@@ -6,7 +6,7 @@ import {
   BsInstagram,
   BsPersonFillAdd,
 } from "react-icons/bs";
-import { FaTwitterSquare } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { LiaEditSolid } from "react-icons/lia";
 import { CiLocationOn } from "react-icons/ci";
 import { Link } from "react-router-dom";
@@ -109,17 +109,25 @@ const ProfileCard = ({ user }) => {
         <div className="w-full flex flex-col gap-4 py-4 pb-6">
           <p className="text-ascent-1 text-lg font-semibold">Social Profiles</p>
 
-          <div className="flex gap-2 items-center text-ascent-2">
-            <BsInstagram className=" text-xl text-ascent-1" />
-            <span>Instagram</span>
-          </div>
-          <div className="flex gap-2 items-center text-ascent-2">
-            <FaTwitterSquare className=" text-xl text-ascent-1" />
-            <span>Twitter</span>
-          </div>
-          <div className="flex gap-2 items-center text-ascent-2">
-            <BsFacebook className=" text-xl text-ascent-1" />
-            <span>Facebook</span>
+          <div className="flex flex-col gap-4">
+            <a href={user?.instagram} target="_blank" rel="noopener noreferrer">
+              <div className="flex gap-2 items-center text-ascent-2 cursor-pointer hover:opacity-80">
+                <BsInstagram className="text-xl text-ascent-1" />
+                <span>Instagram</span>
+              </div>
+            </a>
+            <a href={user?.facebook} target="_blank" rel="noopener noreferrer">
+              <div className="flex gap-2 items-center text-ascent-2 cursor-pointer hover:opacity-80">
+                <BsFacebook className="text-xl text-ascent-1" />
+                <span>Facebook</span>
+              </div>
+            </a>
+            <a href={user?.linkedin} target="_blank" rel="noopener noreferrer">
+              <div className="flex gap-2 items-center text-ascent-2 cursor-pointer hover:opacity-80">
+                <FaLinkedin className="text-xl text-ascent-1" />
+                <span>LinkedIn</span>
+              </div>
+            </a>
           </div>
         </div>
       </div>

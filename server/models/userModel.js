@@ -30,6 +30,9 @@ const userSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
+    instagram: { type: String, default: "" },
+    facebook: { type: String, default: "" },
+    linkedIn: { type: String, default: "" },
     verified: { type: Boolean, default: false },
   },
   { timestamps: true }
