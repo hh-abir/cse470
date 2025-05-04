@@ -148,9 +148,7 @@ const EditProfile = () => {
                 placeholder="instagram"
                 type="text"
                 styles="w-full"
-                register={register("instagram", {
-                  required: "instagram do no match",
-                })}
+                register={register("instagram", )}
                 error={errors.instagram ? errors.instagram?.message : ""}
               />
               <TextInput
@@ -158,9 +156,7 @@ const EditProfile = () => {
                 placeholder="facebook"
                 type="text"
                 styles="w-full"
-                register={register("facebook", {
-                  required: "facebook do no match",
-                })}
+                register={register("facebook",)}
                 error={errors.facebook ? errors.facebook?.message : ""}
               />
               <TextInput
@@ -168,9 +164,7 @@ const EditProfile = () => {
                 placeholder="linkedIn"
                 type="text"
                 styles="w-full"
-                register={register("linkedIn", {
-                  required: "linkedIn do no match",
-                })}
+                register={register("linkedIn", )}
                 error={errors.linkedIn ? errors.linkedIn?.message : ""}
               />
               <TextInput
@@ -178,9 +172,7 @@ const EditProfile = () => {
                 placeholder="Location"
                 type="text"
                 styles="w-full"
-                register={register("location", {
-                  required: "Location do no match",
-                })}
+                register={register("location", )}
                 error={errors.location ? errors.location?.message : ""}
               />
 
