@@ -433,7 +433,27 @@ const handleDelete = async (commentId) => {
                       </div>
                     )}
                   </div>
-
+ <div className="mt-2 flex gap-6">
+                    <p
+                      className="flex gap-2 items-center text-base text-ascent-2 cursor-pointer"
+                      onClick={() => {
+                        handleLike("/posts/like-comment/" + comment?._id);
+                      }}
+                    >
+                      {comment?.likes?.includes(user?._id) ? (
+                        <BiSolidLike size={20} color="blue" />
+                      ) : (
+                        <BiLike size={20} />
+                      )}
+                      {comment?.likes?.length} Likes
+                    </p>
+                    <span
+                      className="text-blue cursor-pointer"
+                      onClick={() => setReplyComments(comment?._id)}
+                    >
+                      Reply
+                    </span>
+                  </div>
                   {replyComments === comment?._id && (
                     <CommentForm
                       user={user}
